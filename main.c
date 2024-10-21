@@ -67,12 +67,19 @@ int main(void)
 
 
 //////////////////////// QUESTION 3 /////////////////////////////
+    //Declare arrays of strings
     char message[50];
     char encryptedMessage[50];
+    char decryptedMessage[50];
+
     printf("Enter the message: ");
     fgets(message, sizeof(message), stdin);
+    //Encrypt the message
     encrypt(message, encryptedMessage);
-    printf("Encrypted message: %s\n ", encryptedMessage);
+    printf("Encrypted message: %s", encryptedMessage);
+    //Decrypt the message
+    decrypt(encryptedMessage, decryptedMessage);
+    printf("Decrypted message: %s\n", decryptedMessage);
 }
 
 

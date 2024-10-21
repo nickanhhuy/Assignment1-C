@@ -99,4 +99,37 @@ void encrypt(const char* message, char* encrypted) {
     }
     *encrypted = '\0'; // Null-terminate the encrypted string
 }
+//Function to decrypt the message
+void decrypt(const char* encryptedMessage, char* decryptedMessage) {
+    // Iterate through the encrypted message using pointer arithmetic
+    while (*encryptedMessage != '\0') {
+        // Check lowercase letters cases
+        if (*encryptedMessage >= 'a' && *encryptedMessage <= 'z') {
+            if (*encryptedMessage == 'a') {
+                *decryptedMessage = 'z'; // Wrap around from 'a' to 'z'
+            } else {
+                *decryptedMessage = *encryptedMessage - 1; // Shift to the previous letter
+            }
+        }
+        // Check uppercase letters cases
+        else if (*encryptedMessage >= 'A' && *encryptedMessage <= 'Z') {
+            if (*encryptedMessage == 'Z') {
+                *decryptedMessage = 'A'; // Wrap around from 'Z' to 'A'
+            } else {
+                *decryptedMessage = *encryptedMessage + 1; // Shift to the next letter
+            }
+        }
+        // Leave other characters unchanged
+        else {
+            *decryptedMessage = *encryptedMessage;
+        }
+        // Move to the next characters in both strings
+        encryptedMessage++;
+        decryptedMessage++;
+    }
+    *decryptedMessage = '\0'; // Null-terminate the decrypted string
+}
+
+
+//Q4
 
