@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "function.h"
 //Q1
 double base_power(double base, int power, double result) {
     //Case: The result always is 1 when the power is 0
@@ -14,7 +16,43 @@ double base_power(double base, int power, double result) {
     //Case: If the power is less than 0 then it repeatedly implements the function until the result shows when the power reaches 0.
     // In this case for handling negative numbers, power should be +1 and result is result/base
     else {
-        return base_power(base, power + 1, result * base);
+        return base_power(base, power + 1, result / base);
     }
+}
+
+//Q2
+// Function to check if an element exists in a set
+int finding_elements_sets(int set[], int size, int element) {
+    // Iterate through the set to check for the presence of the element
+    for (int i = 0; i < size; i++) {
+        // If the element is existed in the set it will return 1
+        if (set[i] == element) {
+            return 1;
+        }
+    }
+    //Otherwise it returns 0 to the exit status
     return 0;
+}
+
+// Function to find the intersection of two sets (arrays)
+int intersection_function(int set1[], int set2[], int size1, int size2, int found_elements[]) {
+    int found = 0; // Counter for the number of common elements
+    // Loop through each element in the first set
+    for (int i = 0; i < size1; i++) {
+        // Check if the current element of set1 exists in set2 and is not already counted
+        if (finding_elements_sets(set2, size2, set1[i]) && !finding_elements_sets(set1, i, set1[i])) {
+            found_elements[found++] = set1[i]; // Store the unique common element
+        }
+    }
+    return found; // Return the count of unique common elements
+}
+
+//Function to display elements in a set
+void list_sets(int set[], int size) {
+    // Loop through each element in the set and print it
+    for (int i = 0; i < size; i++) {
+        printf("%d ", set[i]);
+        //Print the current element
+    }
+    printf("\n");
 }
