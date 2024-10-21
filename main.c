@@ -109,6 +109,19 @@ int main(void)
     for (int j = 0; j < 3; j++) {
         printf("Year %d: %.2lf\n", 2024 - 4 * j, censusAverages[j]); // 2024, 2020, 2016
     }
+
+    // Get user input for a specific city
+    char targetCity[20];
+    printf("\nEnter the city name: ");
+    scanf("%s", targetCity);
+
+    // Find the index of the city entered by the user
+    int cityIndex = finding_index(cities, targetCity);
+
+    // Display the average income for the specified city
+    specific_city_average_income(cityIndex, cities, cityAverages);
+
+    return 0;
 }
 
 

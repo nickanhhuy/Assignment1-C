@@ -20,4 +20,6 @@ void decrypt(const char* encryptedMessage, char* decrypted);
 //Q4
 double average_income_city(double incomes[4][3], int numcity, double average_income_city[]);
 double average_income_census(double incomes[4][3], int numcity, double average_income_census[]);
+int finding_index(char cities[4][20], char entered_city[20]);
+int specific_city_average_income(int index, char cities[4][20], double average_income_city[]);
 #endif //FUNCTION_H

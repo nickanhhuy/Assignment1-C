@@ -154,3 +154,27 @@ double average_income_census(double incomes[4][3], int numcity, double average_i
     }
     return 0;
 }
+// Function to find the index of a city based on its name
+int finding_index(char cities[4][20], char entered_city[20]) {
+    for (int i = 0; i < 4; i++) {
+        int j = 0;
+        while (cities[i][j] != '\0' && entered_city[j] != '\0' && cities[i][j] == entered_city[j]) {
+            j++;
+        }
+        // If both strings have reached the end, they are equal
+        if (cities[i][j] == '\0' && entered_city[j] == '\0') {
+            return i; // Return the index of the matching city
+        }
+    }
+    return -1; // City not found
+}
+
+// Function to display the average income for a specific city
+int specific_city_average_income(int index, char cities[4][20], double average_income_city[]) {
+    if (index >= 0 && index < 4) {
+        printf("Average household income for %s in the last three censuses: %.2lf\n", cities[index], average_income_city[index]);
+    } else {
+        printf("City not found\n");
+    }
+    return 0;
+}
