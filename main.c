@@ -81,7 +81,14 @@ int main(void)
     decrypt(encryptedMessage, decryptedMessage);
     printf("Decrypted message: %s\n", decryptedMessage);
 
+    // Next question
 
+    printf("\nContinue to question 4 (y/n): ");
+    scanf(" %c", &answer);
+    getchar();
+    next_question(answer);
+
+    //
 ///////////////////////// QUESTION 4 ////////////////////////////
     double household_incomes[4][3] = {
         {87290, 77787, 55632},
