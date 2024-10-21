@@ -143,3 +143,14 @@ double average_income_city(double incomes[4][3], int numcity, double average_inc
     }
     return 0;
 }
+// Function to compute average income in each census over all the cities
+double average_income_census(double incomes[4][3], int numcity, double average_income_census[]) {
+    for (int census = 0; census < 3; census++) {
+        double total_incomes = 0;
+        for (int city = 0; city < numcity; city++) {
+            total_incomes += incomes[city][census];
+        }
+        average_income_census[census] = total_incomes / numcity;  // Average based on number of cities
+    }
+    return 0;
+}

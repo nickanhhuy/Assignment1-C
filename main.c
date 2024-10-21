@@ -91,16 +91,23 @@ int main(void)
     };
     char cities[4][20] = {"Brampton", "Toronto", "Mississauga", "Oakville"};
     double cityAverages[4] = {0};
+    double censusAverages[3] = {0};
 
 
     // Calculate averages
     average_income_city(household_incomes, 4, cityAverages);
-
+    average_income_census(household_incomes, 4, censusAverages);
 
     // Display results for average income per city
     printf("Average income for each city:\n");
     for (int i = 0; i < 4; i++) {
         printf("%s: %.2lf\n", cities[i], cityAverages[i]);
+    }
+
+    // Display results for average income per census year
+    printf("\nAverage income for each census year:\n");
+    for (int j = 0; j < 3; j++) {
+        printf("Year %d: %.2lf\n", 2024 - 4 * j, censusAverages[j]); // 2024, 2020, 2016
     }
 }
 

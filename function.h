@@ -19,5 +19,5 @@ void decrypt(const char* encryptedMessage, char* decrypted);
 
 //Q4
 double average_income_city(double incomes[4][3], int numcity, double average_income_city[]);
-
+double average_income_census(double incomes[4][3], int numcity, double average_income_census[]);
 #endif //FUNCTION_H
