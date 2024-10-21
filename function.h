@@ -4,5 +4,5 @@
 
 #ifndef FUNCTION_H
 #define FUNCTION_H
-
+double base_power(double base, int power, double result);
 #endif //FUNCTION_H
