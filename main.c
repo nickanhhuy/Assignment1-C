@@ -80,6 +80,28 @@ int main(void)
     //Decrypt the message
     decrypt(encryptedMessage, decryptedMessage);
     printf("Decrypted message: %s\n", decryptedMessage);
+
+
+///////////////////////// QUESTION 4 ////////////////////////////
+    double household_incomes[4][3] = {
+        {87290, 77787, 55632},
+        {83020, 78373, 62314},
+        {95588, 87934, 705421},
+        {112456, 97657, 809767}
+    };
+    char cities[4][20] = {"Brampton", "Toronto", "Mississauga", "Oakville"};
+    double cityAverages[4] = {0};
+
+
+    // Calculate averages
+    average_income_city(household_incomes, 4, cityAverages);
+
+
+    // Display results for average income per city
+    printf("Average income for each city:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("%s: %.2lf\n", cities[i], cityAverages[i]);
+    }
 }
 
 

@@ -132,4 +132,14 @@ void decrypt(const char* encryptedMessage, char* decryptedMessage) {
 
 
 //Q4
-
+// Function to compute average income for each city
+double average_income_city(double incomes[4][3], int numcity, double average_income_city[]) {
+    for (int city = 0; city < numcity; city++) {
+        double total_incomes = 0;
+        for (int census = 0; census < 3; census++) {  // Corrected loop condition
+            total_incomes += incomes[city][census];
+        }
+        average_income_city[city] = total_incomes / 3;  // Average based on number of censuses
+    }
+    return 0;
+}

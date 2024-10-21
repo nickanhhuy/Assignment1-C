@@ -16,4 +16,8 @@ void list_sets(int set[], int size);
 //Q3
 void encrypt(const char* message, char* encrypted);
 void decrypt(const char* encryptedMessage, char* decrypted);
+
+//Q4
+double average_income_city(double incomes[4][3], int numcity, double average_income_city[]);
+
 #endif //FUNCTION_H
