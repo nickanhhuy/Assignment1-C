@@ -23,6 +23,7 @@ int main(void)
             char answer;
             printf("Continue to question 2 (y/n): ");
             scanf(" %c", &answer);
+            getchar();
             next_question(answer);
         //
 
@@ -44,6 +45,7 @@ int main(void)
         // Find the intersection of Set 1 and Set 2
         int intersection_number_counts = intersection_function(set1, set2, size1, size2, found_elements);
         // Print the intersection result in the main function
+        printf("\tIntersection: ");
         //Using if-else statement to check are there any intersection or not
         if (intersection_number_counts > 0) {
             for (int i = 0; i < intersection_number_counts; i++) {
@@ -56,8 +58,9 @@ int main(void)
 
         // Next question
 
-        printf("Continue to question 3 (y/n): ");
+        printf("\nContinue to question 3 (y/n): ");
         scanf(" %c", &answer);
+        getchar();
         next_question(answer);
 
         //
