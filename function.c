@@ -1,5 +1,14 @@
 #include <stdio.h>
 #include "function.h"
+#include <stdlib.h>
+//Next question function
+void next_question(char answer) {
+    if (answer == 'y' || answer == 'Y')
+        printf("Here is the next question: \n");
+    else if (answer == 'n' || answer == 'N')
+        exit(1);
+}
+
 //Q1
 double base_power(double base, int power, double result) {
     //Case: The result always is 1 when the power is 0
@@ -56,3 +65,38 @@ void list_sets(int set[], int size) {
     }
     printf("\n");
 }
+
+//Q3
+//Function to encrypt the message
+void encrypt(const char* message, char* encrypted) {
+    // Iterate through the message using pointer arithmetic
+    while (*message != '\0') {
+        // Check lowercase letters
+        if (*message >= 'a' && *message <= 'z') {
+            if (*message == 'z') {
+                *encrypted = 'a';
+            }
+            else {
+                *encrypted = *message + 1;
+            }
+        }
+        // Check uppercase letters
+        else if (*message >= 'A' && *message <= 'Z') {
+            if (*message == 'A') {
+                *encrypted = 'Z';
+            }
+            else {
+                *encrypted = *message - 1;
+            }
+        }
+        // Other characters cases
+        else {
+            *encrypted = *message;
+        }
+        // Move to the next characters in both strings
+        message++;
+        encrypted++;
+    }
+    *encrypted = '\0'; // Null-terminate the encrypted string
+}
+
