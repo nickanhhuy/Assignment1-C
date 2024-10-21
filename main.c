@@ -10,7 +10,7 @@ void menu_question() {
     printf("\tQ4 (press 4): Average income\n");
     printf("\tExit terminal (press 5)\n");
     printf("\t##################################\n");
-    printf("Select an option: ");
+    printf("SELECT AN OPTION: ");
 }
 
 int main(void)
